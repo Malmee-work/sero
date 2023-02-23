@@ -1,0 +1,24 @@
+.add {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.back-button {
+  margin: 1rem;
+}
+
+.add-form {
+  width: 50%;
+}
+
+.add-item {
+  float: right;
+  height: 1.5rem;
+  padding-top: 0;
+}
+
+.add-ingredient {
+  width: 50% !important;
+}

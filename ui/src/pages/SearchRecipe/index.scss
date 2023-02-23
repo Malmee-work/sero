@@ -1,0 +1,24 @@
+.search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.recipe-search {
+  width: 50%;
+  margin-top: 10rem;
+}
+
+.search-result {
+  margin-top: 1rem;
+}
+
+.line-item {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.line {
+  border-bottom: 1px solid #ced4da;
+  cursor: pointer;
+}

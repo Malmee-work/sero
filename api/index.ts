@@ -1,6 +1,8 @@
 import { json, urlencoded } from "body-parser";
 import cors from "cors";
 import express, { Request, Response } from "express";
+import mongo from "./core/mongo";
+import { createRecipe, fetchRecipes } from "./services/recipe";
 
 const app = express();
 
@@ -16,24 +18,14 @@ export class Application {
     app.use(json());
   }
 
-  listen() {
+  async listen() {
     app.listen(3080, () => console.log("Listening on port 3080"));
+    await mongo.connect();
   }
 
   setupControllers() {
-    app.get("/recipes", (req: Request, res: Response) => {
-      res.status(200).send("");
-    });
-    app.get("/recipes/:id", (req: Request, res: Response) => {
-      res.status(200).send("");
-    });
-    app.post("/recipes", (req: Request, res: Response) => {
-      res.status(200).send("");
-    });
-    app.delete("/recipes/:id", (req: Request, res: Response) => {
-      res.status(200).send("");
-    });
-    app;
+    app.get("/recipes", fetchRecipes);
+    app.post("/recipes", createRecipe);
   }
 }
 

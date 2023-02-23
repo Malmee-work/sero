@@ -1,0 +1,16 @@
+.recipe {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem !important;
+}
+
+.recipe-name {
+  font-size: 30px;
+  color: #4d4d4d;
+}
+
+.recipe-sub-title {
+  font-size: 20px;
+  color: #8c8c8c;
+  margin-top: 1rem;
+}

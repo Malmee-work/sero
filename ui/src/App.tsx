@@ -1,16 +1,18 @@
-import "./App.css";
-
-import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
-
-import { Home } from "./pages/Home/Home";
+import "./App.scss";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import AddRecipe from "./pages/AddRecipe";
+import Home from "./pages/Home";
+import RecipeDetails from "./pages/Recipe";
 
 const App = () => {
   return (
-    <div className="container">
+    <div className="App-header">
       <Router>
-        <Switch>
-          <Route exact path="/" component={Home} />
-        </Switch>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/add" element={<AddRecipe />} />
+          <Route path="/:recipeId" element={<RecipeDetails />} />
+        </Routes>
       </Router>
     </div>
   );
